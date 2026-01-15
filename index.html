@@ -87,19 +87,31 @@
 
     /* Dividers */
     .divider {
-      width: 55%;
-
-      height: 2px;
+      height: 1px;
       background-color: var(--gold);
       margin: 40px 0;
-      border-radius: 2px;
-      width: 60%;
+      border-radius: 1px;
+      width: 55%;
       margin-left: auto;
       margin-right: auto;
     }
 
-    ul { list-style: none; padding: 0; margin: 0; position: relative; z-index: 1; }
-    ul li { padding-left: 18px; position: relative; margin-bottom: 14px; color: var(--muted); text-align: left; display: inline-block; }
+    ul {
+      list-style: none;
+      padding: 0;
+      margin: 0;
+      position: relative;
+      z-index: 1;
+      display: block;
+    } list-style: none; padding: 0; margin: 0; position: relative; z-index: 1; }
+    ul li {
+      padding-left: 18px;
+      position: relative;
+      margin-bottom: 14px;
+      color: var(--muted);
+      text-align: left;
+      display: block;
+    } padding-left: 18px; position: relative; margin-bottom: 14px; color: var(--muted); text-align: left; display: inline-block; }
     ul li::before { content: '•'; position: absolute; left: -18px; color: var(--gold); }
 
     .tiers { display: grid; grid-template-columns: 1fr; gap: 28px; margin-top: 24px; position: relative; z-index: 1; }
@@ -156,9 +168,8 @@
 
   <div class="container">
     <p><em>This is a private offering. No public profiles. No exposure. No pressure.</em></p>
-    <div class="divider"></div>
 
-    <h2 class="underlined centered">What this experience offers</h2>
+    <h2 class="underlined">What this experience offers</h2>
     <ul>
       <li>Private, engaging conversation and consistent communication</li>
       <li>Companionship for dinners, events, or relaxed city outings</li>
@@ -167,7 +178,7 @@
     </ul>
     <div class="divider"></div>
 
-    <h2 class="underlined centered">Clear boundaries</h2>
+    <h2 class="underlined">Clear boundaries</h2>
     <ul>
       <li>This is not a public service</li>
       <li>This is not explicit or transactional</li>
