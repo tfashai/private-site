@@ -4,67 +4,89 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Private Companionship</title>
+
   <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;600&family=Inter:wght@300;400;500&display=swap" rel="stylesheet">
+
   <style>
     :root {
       --bg: #0e0e0e;
-      --gold: #ffd166; /* brighter, elegant gold */
+      --gold: #ffd166;
       --ivory: #f5f1ea;
       --muted: #b9b4aa;
     }
 
-    * { box-sizing: border-box; margin:0; padding:0; }
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
 
     body {
       font-family: 'Inter', sans-serif;
       background: var(--bg);
       color: var(--ivory);
       line-height: 1.6;
-      position: relative;
-      text-align: center; /* center all text */
     }
 
-    /* HERO SECTION WITH BACKGROUND IMAGE */
+    /* HERO */
     .hero {
-      position: relative;
-      z-index: 1;
       min-height: 300px;
       display: flex;
-      flex-direction: column;
       align-items: center;
       justify-content: center;
       padding: 80px 24px 120px;
       background:
-        linear-gradient(to right, #000000 30%, rgba(0,0,0,0.7) 60%, rgba(0,0,0,0) 100%),
+        linear-gradient(to right, #000 30%, rgba(0,0,0,0.7) 60%, rgba(0,0,0,0) 100%),
         url('images/wine-glass.jpg');
       background-size: cover;
       background-position: center right;
-      background-repeat: no-repeat;
     }
 
     .container {
       max-width: 760px;
       margin: 0 auto;
-      position: relative;
-      text-align: center; /* center all text inside container */
     }
 
     h1, h2, h3 {
       font-family: 'Playfair Display', serif;
       font-weight: 500;
-      letter-spacing: 0.3px;
     }
 
-    h1 { font-size: 42px; margin-bottom: 20px; position: relative; z-index: 1; }
+    h1 {
+      font-size: 42px;
+      margin-bottom: 20px;
+      text-align: center;
+    }
+
     h2 {
-      text-align: center;
- font-size: 28px; margin-top: 40px; margin-bottom: 24px; }
-    p { color: var(--muted); font-size: 16px; position: relative; z-index: 1; }
+      font-size: 28px;
+      margin: 40px 0 24px;
+      text-align: left; /* FIX */
+    }
 
-    /* CTA button */
+    p {
+      color: var(--muted);
+      font-size: 16px;
+    }
+
+    .centered {
+      text-align: center;
+    }
+
+    .underlined {
+  display: inline-block;
+  padding-bottom: 8px;
+  border-bottom: 1px solid var(--gold);
+}
+
+    .divider {
+      height: 1px;
+      background: var(--gold);
+      width: 55%;
+      margin: 40px auto;
+    }
+
     .cta {
-      text-align: center;
-
       display: inline-block;
       margin-top: 32px;
       padding: 14px 34px;
@@ -73,93 +95,109 @@
       text-decoration: none;
       font-weight: 500;
       border-radius: 6px;
-      position: relative;
-      z-index: 1;
     }
 
     .subtle {
       margin-top: 10px;
       font-size: 13px;
       color: #9f9a8f;
-      position: relative;
-      z-index: 1;
+      text-align: center;
     }
 
-    /* Dividers */
-    .divider {
-      height: 1px;
-      background-color: var(--gold);
-      margin: 40px 0;
-      border-radius: 1px;
-      width: 55%;
-      margin-left: auto;
-      margin-right: auto;
-    }
-
+    /* LISTS — FIXED */
     ul {
-      list-style: none;
-      padding: 0;
-      margin: 0;
-      position: relative;
-      z-index: 1;
-      display: block;
-    } list-style: none; padding: 0; margin: 0; position: relative; z-index: 1; }
-    ul li {
-      padding-left: 18px;
-      position: relative;
-      margin-bottom: 14px;
-      color: var(--muted);
-      text-align: left;
-      display: block;
-    } padding-left: 18px; position: relative; margin-bottom: 14px; color: var(--muted); text-align: left; display: inline-block; }
-    ul li::before { content: '•'; position: absolute; left: -18px; color: var(--gold); }
+  list-style: none;
+  padding-left: 22px;
+  margin-top: 16px;
+}
 
-    .tiers { display: grid; grid-template-columns: 1fr; gap: 28px; margin-top: 24px; position: relative; z-index: 1; }
-    .tier { border: 1px solid rgba(255, 209, 102,0.35); border-radius: 10px; padding: 28px; background: rgba(255,255,255,0.02); position: relative; z-index: 1; text-align: center; }
-    .tier h3 { margin-top: 0; margin-bottom: 12px; }
+ul li {
+  position: relative;
+  margin-bottom: 14px;
+  color: var(--muted);
+  text-align: left;
+}
 
-    .form-box { margin-top: 32px; border: 1px solid rgba(255, 209, 102,0.35); border-radius: 10px; padding: 32px; background: rgba(255,255,255,0.02); position: relative; z-index: 1; }
-    input, textarea, select { width: 100%; background: transparent; border: 1px solid rgba(255,255,255,0.25); border-radius: 6px; padding: 12px 14px; color: var(--ivory); margin-bottom: 16px; font-family: 'Inter', sans-serif; }
-    input::placeholder, textarea::placeholder { color: #8f8a80; }
-    button { width: 100%; padding: 14px; background: linear-gradient(135deg, #ffe38f, var(--gold)); border: none; border-radius: 6px; font-weight: 500; cursor: pointer; }
+ul li::before {
+  content: "•";
+  position: absolute;
+  left: -18px;
+  color: var(--gold);
+  font-size: 18px;
+  line-height: 1;
+}
 
-    footer { margin-top: 80px; text-align: center; font-size: 13px; color: #8f8a80; position: relative; z-index: 1; }
-
-    @media (min-width: 768px) {
-      h1 { font-size: 48px; }
-      .tiers { grid-template-columns: repeat(3, 1fr); }
+    /* TIERS */
+    .tiers {
+      display: grid;
+      grid-template-columns: 1fr;
+      gap: 28px;
+      margin-top: 24px;
     }
 
-    @media (max-width: 768px) {
-      h1 { font-size: 2rem; }
-      .hero { background: linear-gradient(to right, #000000 60%, rgba(0,0,0,0.4) 100%), url('images/wine-glass.jpg'); background-size: cover; background-position: center; }
-    }
-  .underlined {
-      display: inline-block;
-      padding-bottom: 6px;
-      border-bottom: 1px solid var(--gold);
-    }
-
-    .centered {
+    .tier {
+      border: 1px solid rgba(255, 209, 102, 0.35);
+      border-radius: 10px;
+      padding: 28px;
+      background: rgba(255,255,255,0.02);
       text-align: center;
     }
 
     .tier-text {
       color: var(--muted);
       font-size: 15px;
-      line-height: 1.6;
       margin-top: 12px;
     }
 
-    .left {
-      text-align: left;
+    /* FORM */
+    .form-box {
+      margin-top: 32px;
+      border: 1px solid rgba(255, 209, 102, 0.35);
+      border-radius: 10px;
+      padding: 32px;
+      background: rgba(255,255,255,0.02);
     }
 
-    </style>
+    input, textarea, select {
+      width: 100%;
+      background: transparent;
+      border: 1px solid rgba(255,255,255,0.25);
+      border-radius: 6px;
+      padding: 12px 14px;
+      color: var(--ivory);
+      margin-bottom: 16px;
+      font-family: 'Inter', sans-serif;
+    }
+
+    button {
+      width: 100%;
+      padding: 14px;
+      background: linear-gradient(135deg, #ffe38f, var(--gold));
+      border: none;
+      border-radius: 6px;
+      font-weight: 500;
+      cursor: pointer;
+    }
+
+    footer {
+      margin-top: 80px;
+      text-align: center;
+      font-size: 13px;
+      color: #8f8a80;
+    }
+
+    @media (min-width: 768px) {
+      .tiers {
+        grid-template-columns: repeat(3, 1fr);
+      }
+    }
+  </style>
 </head>
+
 <body>
+
   <div class="hero">
-    <div class="container">
+    <div class="container centered">
       <h1>Private companionship, designed for women who value discretion.</h1>
       <div class="divider"></div>
       <p>Thoughtful conversation, refined company, and youthful presence — offered quietly and entirely on your terms.</p>
@@ -170,42 +208,49 @@
   </div>
 
   <div class="container">
-    <p class="left"><em>This is a private offering. No public profiles. No exposure. No pressure.</em></p>
 
-    <h2 class="underlined left">What this experience offers</h2>
-    <ul class="left">
+    <p class="centered"><em>This is a private offering. No public profiles. No exposure. No pressure.</em></p>
+
+    <!-- LEFT-ALIGNED HEADING -->
+    <h2><span class="underlined">What this experience offers</span></h2>
+    <ul>
       <li>Private, engaging conversation and consistent communication</li>
       <li>Companionship for dinners, events, or relaxed city outings</li>
       <li>Attentiveness, presence, and genuine interest</li>
       <li>A discreet dynamic shaped by mutual comfort and boundaries</li>
     </ul>
 
-    <h2 class="underlined left">Clear boundaries</h2>
-    <ul class="left">
+
+    <!-- LEFT-ALIGNED HEADING -->
+    <h2><span class="underlined">Clear boundaries</span></h2>
+    <ul>
       <li>This is not a public service</li>
       <li>This is not explicit or transactional</li>
       <li>This is not available to everyone</li>
     </ul>
 
     <h2 class="underlined centered">Levels of access</h2>
-    <div class="tiers">
-      <div class="tier">
-        <h3 class="underlined">The Companion</h3>
-        <p class="tier-text">A graceful presence for meaningful connection — offering engaging conversation, thoughtful attention, and consistent companionship. Ideal for those who appreciate subtlety, charm, and a refreshing sense of ease in their company.</p>
-      </div>
-      <div class="tier">
-        <h3 class="underlined">The Signature</h3>
-        <p class="tier-text">A more curated experience with limited weekly availability and carefully maintained communication. Designed for those who value intention, refinement, and a deeper sense of presence.</p>
-      </div>
-      <div class="tier">
-        <h3 class="underlined">Invitation Only</h3>
-        <p class="tier-text">An exclusive, bespoke offering available strictly by referral. Access is extremely limited, with each dynamic thoughtfully tailored. Discretion, privacy, and respect are absolute.</p>
-      </div>
-    </div>
+<div class="tiers">
+<div class="tier">
+<h3 class="underlined">The Companion</h3>
+<p class="tier-text">A graceful presence for meaningful connection — offering engaging conversation, thoughtful attention, and consistent companionship. Ideal for those who appreciate subtlety, charm, and a refreshing sense of ease in their company.</p>
+</div>
+<div class="tier">
+<h3 class="underlined">The Signature</h3>
+<p class="tier-text">A more curated experience with limited weekly availability and carefully maintained communication. Designed for those who value intention, refinement, and a deeper sense of presence.</p>
+</div>
+<div class="tier">
+<h3 class="underlined">Invitation Only</h3>
+<p class="tier-text">An exclusive, bespoke offering available strictly by referral. Access is extremely limited, with each dynamic thoughtfully tailored. Discretion, privacy, and respect are absolute.</p>
+</div>
+</div>
 
-    <div class="divider"></div>
 
-    <h2 id="request" class="underlined centered">Request a private introduction</h2>Request a private introduction</h2>
+<div class="divider"></div>
+    
+
+    <h2 id="request" class="centered"><span class="underlined">Request a private introduction</span></h2>
+
     <div class="form-box">
       <form action="https://formspree.io/f/xpqqwjvd" method="POST">
         <input type="text" name="first_name" placeholder="First name" required>
@@ -222,31 +267,11 @@
         <button type="submit">Submit request</button>
       </form>
       <div class="subtle">Requests are reviewed personally. Not all are accepted.</div>
-      <div class="divider"></div>
     </div>
-
-        <h2 class="underlined centered">Levels of Access</h2>
-
-    <div class="tiers">
-      <div class="tier">
-        <h3 class="underlined">The Companion</h3>
-        <p class="tier-text">A graceful presence for meaningful connection — offering engaging conversation, thoughtful attention, and consistent companionship. Designed for those who value subtlety, charm, and a refined sense of ease, with a touch of youthful energy that feels natural.</p>
-      </div>
-
-      <div class="tier">
-        <h3 class="underlined">The Signature</h3>
-        <p class="tier-text">A more curated dynamic, reserved for those seeking depth and intentionality. Limited weekly engagements paired with carefully maintained communication, creating a seamless and composed experience rooted in presence, discretion, and mutual comfort.</p>
-      </div>
-
-      <div class="tier">
-        <h3 class="underlined">Invitation Only</h3>
-        <p class="tier-text">An exclusive, bespoke offering available strictly by referral. Access is extremely limited, with each dynamic thoughtfully tailored and privately maintained. Every interaction is discreet, curated, and conducted with the highest regard for privacy, respect, and confidentiality.</p>
-      </div>
-    </div>
-
-    <div class="divider"></div>
 
     <footer>Privacy respected · Conversations confidential · Availability limited</footer>
+
   </div>
+
 </body>
 </html>
