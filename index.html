@@ -74,10 +74,10 @@
     }
 
     .underlined {
-      display: inline-block;
-      padding-bottom: 8px;
-      border-bottom: 2px solid var(--gold);
-    }
+  display: inline-block;
+  padding-bottom: 8px;
+  border-bottom: 1px solid var(--gold);
+}
 
     .divider {
       height: 1px;
@@ -106,16 +106,26 @@
 
     /* LISTS — FIXED */
     ul {
-      list-style: disc;
-      padding-left: 22px;
-      margin-top: 16px;
-    }
+  list-style: none;
+  padding-left: 22px;
+  margin-top: 16px;
+}
 
-    ul li {
-      margin-bottom: 14px;
-      color: var(--muted);
-      text-align: left;
-    }
+ul li {
+  position: relative;
+  margin-bottom: 14px;
+  color: var(--muted);
+  text-align: left;
+}
+
+ul li::before {
+  content: "•";
+  position: absolute;
+  left: -18px;
+  color: var(--gold);
+  font-size: 18px;
+  line-height: 1;
+}
 
     /* TIERS */
     .tiers {
@@ -210,7 +220,6 @@
       <li>A discreet dynamic shaped by mutual comfort and boundaries</li>
     </ul>
 
-    <div class="divider"></div>
 
     <!-- LEFT-ALIGNED HEADING -->
     <h2><span class="underlined">Clear boundaries</span></h2>
@@ -220,7 +229,7 @@
       <li>This is not available to everyone</li>
     </ul>
 
-    <div class="divider"></div>
+    
 
     <h2 id="request" class="centered"><span class="underlined">Request a private introduction</span></h2>
 
